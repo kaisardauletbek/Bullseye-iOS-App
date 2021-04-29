@@ -18,13 +18,10 @@ struct ContentView: View {
 		
 		// MARK: - VStack
 		ZStack {
-			Color("BackgroundColor")
-				.edgesIgnoringSafeArea(.all)
+			BackgroundView(game: $game)
 			VStack{
 				InstructionsView(game: $game)
-				
 				SliderView(sliderValue: $sliderValue)
-				
 				HitMeButtonView(alertIsVisible: $alertIsVisible, sliderValue: $sliderValue, game: $game, text: "Hit me!")
 				
 			}

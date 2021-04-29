@@ -22,6 +22,7 @@ struct ShapesView: View {
 			Ellipse()
 				.fill(Color.blue)
 				.frame(width: 200, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
+			Image("folder.circle")
 		}
 		.background(Color.green)
 	}
