@@ -12,8 +12,22 @@ struct Game {
 	var score: Int = 0
 	var round: Int = 1
 	
+	mutating func startNewRound(points: Int) {
+		score += points
+		round = round + 1
+		var target: Int = Int.random(in: 1...100)
+	}
+	
 	func points(sliderValue: Int) -> Int {
-		100 - abs(self.target - sliderValue)
+		
+		if(sliderValue == self.target) {
+			return 200
+		} else if(abs(self.target - sliderValue) <= 2) {
+			return 150 - abs(self.target - sliderValue)
+		} else {
+			return 100 - abs(self.target - sliderValue)
+		}
+		
 	}
 }
 
